@@ -7,7 +7,7 @@ WORKDIR /src
 COPY ["KubernetesDemo.csproj", "KubernetesDemo/"]
 RUN dotnet restore "KubernetesDemo/KubernetesDemo.csproj"
 COPY . .
-WORKDIR "/src/KubernetesDemo"
+#WORKDIR "/src/KubernetesDemo"
 RUN dotnet build "KubernetesDemo.csproj" -c Release -o /app
 
 FROM build AS publish
