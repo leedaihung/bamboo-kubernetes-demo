@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,7 @@ namespace KubernetesDemo.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            Thread.Sleep(5000);
             var host = Dns.GetHostEntry(Dns.GetHostName());
             return host.AddressList.Select(info => info.ToString());
         }
