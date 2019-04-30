@@ -7,6 +7,12 @@ Test Azure Kubernetes Service
 * /api/values
 * /api/ip [return thread sleep 5s]
 
+## Docker build image
+
+``` sh
+docker build Dockerfile .
+```
+
 ## AKS Command
 
 ### 0, Change the azure region to China
@@ -30,6 +36,12 @@ az acr create -n ACR-NAME -g RG_NAME -l LOCATION --sku SKU_LEVEL
 ```
 
 #### List azure container registry
+
+``` sh
+az acr list -o table
+```
+
+#### Login azure container registry
 
 ``` sh
 az acr login -n ACR_NAME
@@ -107,7 +119,7 @@ az aks get-credentials --name CLS_NAME -g RG_NAME
 kubectl get nodes
 ```
 
-### 3, Deploy application to AKSAzure Kubernetes Service
+### 3, Deploy application to Azure Kubernetes Service
 
 #### Get ACR loginServer info
 
